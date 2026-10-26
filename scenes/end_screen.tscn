@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://vlt56cv7xtm5"]
+
+[ext_resource type="Script" uid="uid://boh17hf0vqglk" path="res://scripts/end_screen.gd" id="1_kq7ac"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kq7ac")
+first_level = "uid://dm660mmlm1co5"
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "THE END
+"
+horizontal_alignment = 1
+
+[node name="PromptLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press SPACE to play again"
+horizontal_alignment = 1

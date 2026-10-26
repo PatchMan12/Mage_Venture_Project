@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://mvlli6ju5dn3"]
+
+[ext_resource type="Script" uid="uid://cu480knqv8gnf" path="res://scripts/sign.gd" id="1_kd50q"]
+[ext_resource type="Texture2D" uid="uid://bcwhw15we3t74" path="res://assets/door.png" id="2_8yyji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge2pc"]
+atlas = ExtResource("2_8yyji")
+region = Rect2(1.0098953, 34.01842, 13.984453, 13.9569435)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkam6"]
+size = Vector2(13, 12)
+
+[node name="Sign" type="Area2D"]
+script = ExtResource("1_kd50q")
+message = "Nothing to see here :D"
+bubble_offset_x = 40.0
+bubble_offset_y = -20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6.25)
+scale = Vector2(1, 0.96153843)
+texture = SubResource("AtlasTexture_ge2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_qkam6")
+
+[node name="Bubble" type="PanelContainer" parent="."]
+offset_left = -6.0
+offset_top = -23.0
+offset_right = 21.0
+scale = Vector2(0.5, 0.5)
+
+[node name="MessageLabel" type="Label" parent="Bubble"]
+layout_mode = 2

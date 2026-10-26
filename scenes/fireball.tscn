@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://da1xolffcurmo"]
+
+[ext_resource type="Script" uid="uid://dxtokvpsudn55" path="res://scripts/fireball.gd" id="1_1gl40"]
+[ext_resource type="Texture2D" uid="uid://4t8t4t2d8mgo" path="res://assets/attack sprites.png" id="1_3s14c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gl40"]
+atlas = ExtResource("1_3s14c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb14k"]
+atlas = ExtResource("1_3s14c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kba2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gl40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb14k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43lgj"]
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_1gl40")
+lifetime = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_7kba2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_43lgj")

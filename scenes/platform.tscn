@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5hhgb1cy40xv"]
+
+[ext_resource type="Texture2D" uid="uid://cd7x3ttxu0flb" path="res://assets/world_ass_tiles.png" id="1_ba0x2"]
+[ext_resource type="Script" uid="uid://dh4o5cwn7lh80" path="res://scripts/platform.gd" id="1_nlgqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlgqw"]
+atlas = ExtResource("1_ba0x2")
+region = Rect2(31.917591, 16.134106, 16.131985, 7.1510544)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_507ja"]
+size = Vector2(24, 5.75)
+
+[node name="Platform" type="AnimatableBody2D"]
+script = ExtResource("1_nlgqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.3841858e-07, -1.125)
+scale = Vector2(1.4999999, 0.8214286)
+texture = SubResource("AtlasTexture_nlgqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_507ja")

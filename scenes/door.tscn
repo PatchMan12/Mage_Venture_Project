@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8kq8fxtj0x1y"]
+
+[ext_resource type="Script" uid="uid://bcnkpnbb58d2b" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://bcwhw15we3t74" path="res://assets/door.png" id="2_83dcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la1wf"]
+atlas = ExtResource("2_83dcw")
+region = Rect2(3.8754463, 12.163965, 24.618, 19.906332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18pbm"]
+size = Vector2(24, 19)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_uvdjg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9.75)
+scale = Vector2(1, 1.0263158)
+texture = SubResource("AtlasTexture_la1wf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_18pbm")
+
+[node name="PromptLabel" type="Label" parent="."]
+offset_left = -9.0
+offset_top = -35.0
+offset_right = 145.0
+offset_bottom = -12.0
+scale = Vector2(0.3, 0.3)
+text = "Press E"

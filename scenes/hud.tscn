@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfpiphmgkeio5"]
+
+[ext_resource type="Script" uid="uid://bpfntxxyfhut0" path="res://scripts/hud.gd" id="1_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://cpumawhbeu0g" path="res://assets/heart.png" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://cuwsm6cw0ew8j" path="res://assets/mana_bottle.png" id="2_5ysmq"]
+
+[node name="HUD" type="CanvasLayer"]
+scale = Vector2(1.4, 1.4)
+transform = Transform2D(1.4, 0, 0, 1.4, 0, 0)
+script = ExtResource("1_5ysmq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HealthRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HeartIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HealthRow"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("1_oo0fn")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HealthRow"]
+layout_mode = 2
+
+[node name="ManaRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ManaIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/ManaRow"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_5ysmq")
+expand_mode = 1
+
+[node name="ManaBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/ManaRow"]
+layout_mode = 2
+
+[node name="AttackRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/AttackRow"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3

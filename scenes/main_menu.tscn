@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv026qqj1rxs2"]
+
+[ext_resource type="Script" uid="uid://b4hpd6gik018t" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://ctrpw31ht55n8" path="res://assets/main.png" id="1_l6cm7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekxnf"]
+size = Vector2(265, 103)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ekxnf")
+first_level = "uid://dm660mmlm1co5"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.9820972, 0.92836684)
+texture = ExtResource("1_l6cm7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="PlayButton" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayButton"]
+position = Vector2(576.5, 430.5)
+shape = SubResource("RectangleShape2D_ekxnf")

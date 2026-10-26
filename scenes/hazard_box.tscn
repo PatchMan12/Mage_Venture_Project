@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0hplh6rkr8bu"]
+
+[ext_resource type="Script" uid="uid://cw5uwflh4fdo0" path="res://scripts/hazard_box.gd" id="1_o4c2r"]
+
+[node name="HazardBox" type="Area2D"]
+script = ExtResource("1_o4c2r")

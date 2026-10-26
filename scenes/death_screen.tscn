@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuyvh6xmhu58x"]
+
+[ext_resource type="Script" uid="uid://bwef6rnfevypp" path="res://scripts/death_screen.gd" id="1_uyutr"]
+
+[node name="DeathScreen" type="CanvasLayer"]
+script = ExtResource("1_uyutr")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7607843)
+
+[node name="CenterContainer" type="CenterContainer" parent="Dim"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dim/CenterContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Dim/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="PromptLabel" type="Label" parent="Dim/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "PRESS SPACE TO TRY AGAIN"
+horizontal_alignment = 1
