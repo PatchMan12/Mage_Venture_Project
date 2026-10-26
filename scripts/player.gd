@@ -5,7 +5,7 @@ signal mana_changed(current: float, maximum: float)
 signal attack_changed(icon: Texture2D)
 signal died
 
-const SPEED = 300.0
+const SPEED = 230.0
 const JUMP_VELOCITY = -300.0
 
 @export_group("Attacks")
